@@ -64,8 +64,8 @@ func (u *MqttUsecase) GetVehicleLocation(client MQTT.Client, msg MQTT.Message) {
 	dst := distance.Distance{
 		Latitude1:  payload.Latitude,
 		Longitude1: payload.Longitude,
-		Latitude2:  -6.20890615,
-		Longitude2: 106.8471176,
+		Latitude2:  -6.2089061,
+		Longitude2: 106.847117,
 	}
 
 	distanceLoc := dst.GetDistanceOnMeter()

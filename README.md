@@ -46,6 +46,8 @@ graph LR
 
 ## Setup Instructions
 
+The project uses Docker Compose for orchestrating all the main services including database migrations. The Vehicle Location Publisher and RabbitMQ Subscriber are run separately.
+
 1. **Start the Infrastructure Services**
 
 ```bash
@@ -53,24 +55,13 @@ cd vehicleSvc
 docker-compose up -d
 ```
 
-This will start:
+This will start all services including:
 - PostgreSQL (port 5432)
 - RabbitMQ (ports 5672, 15672)
 - Mosquitto (port 1883)
-
-2. **Run Database Migrations**
-
-```bash
-cd vehicleSvc
-make migrate
-```
-
-3. **Start the Vehicle Service**
-
-```bash
-cd vehicleSvc
-make run
-```
+- Database Migrations (automatic)
+- Vehicle Service REST API (port 8000)
+- Vehicle Service Consumer
 
 4. **Run the Vehicle Location Publisher**
 
@@ -136,12 +127,32 @@ Detailed API documentation is available at the service endpoints.
 
 ## Development
 
+### Makefile Commands
+
+The Vehicle Service (`vehicleSvc/`) includes several helpful make commands:
+
+```bash
+# Database Migration Commands
+make migrate-up      # Run database migrations up
+make migrate-down    # Rollback database migrations
+make migrate-fresh   # Rollback all migrations and migrate up again
+make migration name=migration_name  # Create new migration files
+
+# Development Commands
+make run            # Run the REST API service
+make docs           # Generate Swagger documentation (requires swag)
+make test           # Run tests with coverage report
+```
+
+### Development Guide
+
 To modify or extend the system:
 
 1. **Vehicle Service**
    - Uses Clean Architecture pattern
    - Located in `vehicleSvc/`
    - Contains database migrations in `database/migration/`
+   - Use `make migration name=your_migration_name` to create new migrations
 
 2. **Location Publisher**
    - Simple Go application for publishing location updates
