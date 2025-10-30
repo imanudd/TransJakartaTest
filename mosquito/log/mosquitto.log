@@ -1,0 +1,189 @@
+1761745719: mosquitto version 2.0.22 starting
+1761745719: Config loaded from /mosquitto/config/mosquitto.conf.
+1761745719: Opening ipv4 listen socket on port 1883.
+1761745719: Opening ipv6 listen socket on port 1883.
+1761745719: mosquitto version 2.0.22 running
+1761747519: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761749320: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761749485: New connection from 172.22.0.1:56378 on port 1883.
+1761749485: New client connected from 172.22.0.1:56378 as go-client (p2, c1, k30).
+1761749486: Client go-client closed its connection.
+1761749634: New connection from 172.22.0.1:55984 on port 1883.
+1761749634: New client connected from 172.22.0.1:55984 as go-client (p2, c1, k30).
+1761749634: Client go-client closed its connection.
+1761749750: New connection from 172.22.0.1:59936 on port 1883.
+1761749750: New client connected from 172.22.0.1:59936 as go-subscriber-1 (p2, c1, k30).
+1761749756: Client go-subscriber-1 disconnected.
+1761749798: New connection from 172.22.0.1:61652 on port 1883.
+1761749798: New client connected from 172.22.0.1:61652 as go-subscriber-1 (p2, c1, k30).
+1761749798: Client go-subscriber-1 closed its connection.
+1761750002: New connection from 172.22.0.1:63986 on port 1883.
+1761750002: New client connected from 172.22.0.1:63986 as go-subscriber-1 (p2, c1, k30).
+1761750323: New connection from 172.22.0.1:57290 on port 1883.
+1761750323: New client connected from 172.22.0.1:57290 as auto-EE288D0B-B323-A149-AA50-5B9C7D3D5C86 (p2, c1, k60).
+1761750323: Client auto-EE288D0B-B323-A149-AA50-5B9C7D3D5C86 disconnected.
+1761750323: Client go-subscriber-1 closed its connection.
+1761750429: New connection from 172.22.0.1:63732 on port 1883.
+1761750429: New client connected from 172.22.0.1:63732 as go-subscriber-1 (p2, c1, k30).
+1761750439: Client go-subscriber-1 disconnected.
+1761750441: New connection from 172.22.0.1:65220 on port 1883.
+1761750441: New client connected from 172.22.0.1:65220 as go-subscriber-1 (p2, c1, k30).
+1761750476: Client go-subscriber-1 disconnected.
+1761750479: New connection from 172.22.0.1:55036 on port 1883.
+1761750479: New client connected from 172.22.0.1:55036 as go-subscriber-1 (p2, c1, k30).
+1761750482: New connection from 172.22.0.1:55040 on port 1883.
+1761750482: New client connected from 172.22.0.1:55040 as auto-BD6766B2-DF69-AEED-7F94-DCD627248658 (p2, c1, k60).
+1761750482: Client auto-BD6766B2-DF69-AEED-7F94-DCD627248658 disconnected.
+1761750548: Client go-subscriber-1 disconnected.
+1761750551: New connection from 172.22.0.1:62864 on port 1883.
+1761750551: New client connected from 172.22.0.1:62864 as go-subscriber-1 (p2, c1, k30).
+1761750553: New connection from 172.22.0.1:62880 on port 1883.
+1761750553: New client connected from 172.22.0.1:62880 as auto-16DB6C18-54C7-3032-01C8-86DEBD9D5FAC (p2, c1, k60).
+1761750553: Client auto-16DB6C18-54C7-3032-01C8-86DEBD9D5FAC disconnected.
+1761750574: Client go-subscriber-1 disconnected.
+1761750577: New connection from 172.22.0.1:55260 on port 1883.
+1761750577: New client connected from 172.22.0.1:55260 as go-subscriber-1 (p2, c1, k30).
+1761750579: New connection from 172.22.0.1:55266 on port 1883.
+1761750579: New client connected from 172.22.0.1:55266 as auto-F9805EF4-1160-07CB-1763-649EC389F6BD (p2, c1, k60).
+1761750579: Client auto-F9805EF4-1160-07CB-1763-649EC389F6BD disconnected.
+1761750745: Client go-subscriber-1 disconnected.
+1761750749: New connection from 172.22.0.1:63134 on port 1883.
+1761750749: New client connected from 172.22.0.1:63134 as go-subscriber-1 (p2, c1, k30).
+1761750766: New connection from 172.22.0.1:64988 on port 1883.
+1761750766: New client connected from 172.22.0.1:64988 as auto-5CD0B75D-295F-A9D7-135F-D2DFE9FC0642 (p2, c1, k60).
+1761750766: Client auto-5CD0B75D-295F-A9D7-135F-D2DFE9FC0642 disconnected.
+1761750786: Client go-subscriber-1 disconnected.
+1761750788: New connection from 172.22.0.1:58334 on port 1883.
+1761750788: New client connected from 172.22.0.1:58334 as go-subscriber-1 (p2, c1, k30).
+1761750791: New connection from 172.22.0.1:58348 on port 1883.
+1761750791: New client connected from 172.22.0.1:58348 as auto-3846B926-3F45-12B0-3B33-49DF6BFC21EF (p2, c1, k60).
+1761750791: Client auto-3846B926-3F45-12B0-3B33-49DF6BFC21EF disconnected.
+1761750942: Client go-subscriber-1 disconnected.
+1761750945: New connection from 172.22.0.1:56226 on port 1883.
+1761750945: New client connected from 172.22.0.1:56226 as go-subscriber-1 (p2, c1, k30).
+1761750948: New connection from 172.22.0.1:60248 on port 1883.
+1761750948: New client connected from 172.22.0.1:60248 as auto-AE6A8CC1-AC5E-D496-8B4A-3B2D1D668FD9 (p2, c1, k60).
+1761750948: Client auto-AE6A8CC1-AC5E-D496-8B4A-3B2D1D668FD9 disconnected.
+1761751121: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761752035: Client go-subscriber-1 disconnected.
+1761752922: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761754723: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761754799: New connection from 172.22.0.1:60260 on port 1883.
+1761754799: New client connected from 172.22.0.1:60260 as go-subscriber-1 (p2, c1, k30).
+1761754814: New connection from 172.22.0.1:63346 on port 1883.
+1761754814: New client connected from 172.22.0.1:63346 as go-mqtt-publisher (p2, c1, k30).
+1761754834: Client go-mqtt-publisher closed its connection.
+1761754837: Client go-subscriber-1 disconnected.
+1761755616: New connection from 172.22.0.1:63524 on port 1883.
+1761755616: New client connected from 172.22.0.1:63524 as go-subscriber-1 (p2, c1, k30).
+1761755623: New connection from 172.22.0.1:63532 on port 1883.
+1761755623: New client connected from 172.22.0.1:63532 as go-mqtt-publisher (p2, c1, k30).
+1761755627: Client go-subscriber-1 disconnected.
+1761755630: Client go-mqtt-publisher closed its connection.
+1761755864: New connection from 172.22.0.1:56668 on port 1883.
+1761755864: New client connected from 172.22.0.1:56668 as go-subscriber-1 (p2, c1, k30).
+1761755866: New connection from 172.22.0.1:56682 on port 1883.
+1761755866: New client connected from 172.22.0.1:56682 as go-mqtt-publisher (p2, c1, k30).
+1761755870: Client go-mqtt-publisher closed its connection.
+1761756132: Client go-subscriber-1 disconnected.
+1761756135: New connection from 172.22.0.1:60700 on port 1883.
+1761756135: New client connected from 172.22.0.1:60700 as go-subscriber-1 (p2, c1, k30).
+1761756137: New connection from 172.22.0.1:55402 on port 1883.
+1761756137: New client connected from 172.22.0.1:55402 as go-mqtt-publisher (p2, c1, k30).
+1761756254: Client go-mqtt-publisher closed its connection.
+1761756256: Client go-subscriber-1 disconnected.
+1761756524: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761758325: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761760126: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761761927: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761763728: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761764248: New connection from 172.22.0.1:61524 on port 1883.
+1761764248: New client connected from 172.22.0.1:61524 as go-subscriber-1 (p2, c1, k30).
+1761764252: New connection from 172.22.0.1:61526 on port 1883.
+1761764252: New client connected from 172.22.0.1:61526 as go-mqtt-publisher (p2, c1, k30).
+1761764308: Client go-subscriber-1 disconnected.
+1761764313: Client go-mqtt-publisher closed its connection.
+1761764388: New connection from 172.22.0.1:62828 on port 1883.
+1761764388: New client connected from 172.22.0.1:62828 as go-mqtt-publisher (p2, c1, k30).
+1761764392: New connection from 172.22.0.1:62840 on port 1883.
+1761764392: New client connected from 172.22.0.1:62840 as go-subscriber-1 (p2, c1, k30).
+1761764588: Client go-mqtt-publisher disconnected.
+1761764599: Client go-subscriber-1 disconnected.
+1761764995: New connection from 172.22.0.1:55724 on port 1883.
+1761764995: New client connected from 172.22.0.1:55724 as go-subscriber-1 (p2, c1, k30).
+1761764998: New connection from 172.22.0.1:56788 on port 1883.
+1761764998: New client connected from 172.22.0.1:56788 as go-mqtt-publisher (p2, c1, k30).
+1761765003: Client go-subscriber-1 disconnected.
+1761765044: New connection from 172.22.0.1:58410 on port 1883.
+1761765044: New client connected from 172.22.0.1:58410 as go-subscriber-1 (p2, c1, k30).
+1761765046: Client go-mqtt-publisher closed its connection.
+1761765052: Client go-subscriber-1 disconnected.
+1761765084: New connection from 172.22.0.1:57068 on port 1883.
+1761765084: New client connected from 172.22.0.1:57068 as go-subscriber-1 (p2, c1, k30).
+1761765087: New connection from 172.22.0.1:57408 on port 1883.
+1761765087: New client connected from 172.22.0.1:57408 as go-mqtt-publisher (p2, c1, k30).
+1761765093: Client go-subscriber-1 disconnected.
+1761765234: Client go-mqtt-publisher closed its connection.
+1761765236: New connection from 172.22.0.1:58416 on port 1883.
+1761765236: New client connected from 172.22.0.1:58416 as go-mqtt-publisher (p2, c1, k30).
+1761765241: New connection from 172.22.0.1:58428 on port 1883.
+1761765241: New client connected from 172.22.0.1:58428 as go-subscriber-1 (p2, c1, k30).
+1761765361: Client go-subscriber-1 disconnected.
+1761765362: Client go-mqtt-publisher closed its connection.
+1761765379: New connection from 172.22.0.1:62346 on port 1883.
+1761765379: New client connected from 172.22.0.1:62346 as go-subscriber-1 (p2, c1, k30).
+1761765382: New connection from 172.22.0.1:62356 on port 1883.
+1761765382: New client connected from 172.22.0.1:62356 as go-mqtt-publisher (p2, c1, k30).
+1761765528: Client go-subscriber-1 disconnected.
+1761765529: Client go-mqtt-publisher closed its connection.
+1761765529: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761772231: New connection from 172.22.0.1:57554 on port 1883.
+1761772231: New client connected from 172.22.0.1:57554 as go-mqtt-publisher (p2, c1, k30).
+1761772234: New connection from 172.22.0.1:58374 on port 1883.
+1761772234: New client connected from 172.22.0.1:58374 as go-subscriber-1 (p2, c1, k30).
+1761772349: Client go-mqtt-publisher closed its connection.
+1761772351: Client go-subscriber-1 disconnected.
+1761772353: New connection from 172.22.0.1:58676 on port 1883.
+1761772353: New client connected from 172.22.0.1:58676 as go-subscriber-1 (p2, c1, k30).
+1761772370: New connection from 172.22.0.1:56982 on port 1883.
+1761772370: New client connected from 172.22.0.1:56982 as go-mqtt-publisher (p2, c1, k30).
+1761772437: Client go-subscriber-1 disconnected.
+1761772439: Client go-mqtt-publisher closed its connection.
+1761772443: New connection from 172.22.0.1:58004 on port 1883.
+1761772443: New client connected from 172.22.0.1:58004 as go-mqtt-publisher (p2, c1, k30).
+1761772445: New connection from 172.22.0.1:58014 on port 1883.
+1761772445: New client connected from 172.22.0.1:58014 as go-subscriber-1 (p2, c1, k30).
+1761772502: Client go-subscriber-1 disconnected.
+1761772504: Client go-mqtt-publisher closed its connection.
+1761772509: New connection from 172.22.0.1:58520 on port 1883.
+1761772509: New client connected from 172.22.0.1:58520 as go-subscriber-1 (p2, c1, k30).
+1761772511: New connection from 172.22.0.1:58522 on port 1883.
+1761772511: New client connected from 172.22.0.1:58522 as go-mqtt-publisher (p2, c1, k30).
+1761772611: Client go-subscriber-1 disconnected.
+1761772615: Client go-mqtt-publisher closed its connection.
+1761772616: New connection from 172.22.0.1:56544 on port 1883.
+1761772616: New client connected from 172.22.0.1:56544 as go-mqtt-publisher (p2, c1, k30).
+1761772621: New connection from 172.22.0.1:56558 on port 1883.
+1761772621: New client connected from 172.22.0.1:56558 as go-subscriber-1 (p2, c1, k30).
+1761772743: Client go-mqtt-publisher closed its connection.
+1761772744: Client go-subscriber-1 disconnected.
+1761773005: New connection from 172.22.0.1:58704 on port 1883.
+1761773005: New client connected from 172.22.0.1:58704 as go-subscriber-1 (p2, c1, k30).
+1761773007: New connection from 172.22.0.1:58714 on port 1883.
+1761773007: New client connected from 172.22.0.1:58714 as go-mqtt-publisher (p2, c1, k30).
+1761773207: Client go-mqtt-publisher disconnected.
+1761773337: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761773623: Client go-subscriber-1 disconnected.
+1761773627: New connection from 172.22.0.1:62516 on port 1883.
+1761773627: New client connected from 172.22.0.1:62516 as go-subscriber-1 (p2, c1, k30).
+1761773628: Client go-subscriber-1 disconnected.
+1761775138: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761775616: mosquitto version 2.0.22 terminating
+1761775616: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1761775851: mosquitto version 2.0.22 starting
+1761775851: Config loaded from /mosquitto/config/mosquitto.conf.
+1761775851: Opening ipv4 listen socket on port 1883.
+1761775851: Opening ipv6 listen socket on port 1883.
+1761775851: mosquitto version 2.0.22 running
+1761776117: mosquitto version 2.0.22 terminating
+1761776117: Saving in-memory database to /mosquitto/data//mosquitto.db.
