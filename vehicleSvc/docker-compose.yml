@@ -1,0 +1,79 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: transjkt
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmsg
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+      RABBITMQ_DEFAULT_VHOST: /
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: mosquittov2
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+    configs:
+      - source: mosquitto_conf
+        target: /mosquitto/config/mosquitto.conf
+    volumes:
+      - ./mosquito/data:/mosquitto/data
+      - ./mosquito/log:/mosquitto/log
+
+  rest:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    container_name: rest
+    depends_on:
+      - postgres
+      - rabbitmq
+      - mosquitto
+    command: ["rest"]
+    ports:
+      - "8000:8000"
+    environment:
+      MQTT_URL : "tcp://mosquitto:1883"
+      PGSQL_HOST : "postgres"
+      RABBIT_URL : "amqp://admin:admin123@rabbitmsg:5672/"
+
+  consumer:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    container_name: consumer
+    depends_on:
+      - rabbitmq
+      - postgres
+      - mosquitto
+      - rest
+    command: ["consumer"]
+    environment:
+      MQTT_URL: "tcp://mosquitto:1883"
+      PGSQL_HOST : "postgres"
+      RABBIT_URL : "amqp://admin:admin123@rabbitmsg:5672/"
+
+
+
+volumes:
+  postgres_data:
+configs:
+  mosquitto_conf:
+    file: ./mosquitto.conf
