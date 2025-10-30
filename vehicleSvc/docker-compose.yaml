@@ -1,0 +1,124 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: transjkt
+    ports:
+      - "5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - transjakarta-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d admin -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmsg
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+      RABBITMQ_DEFAULT_VHOST: /
+    ports:
+      - "5672"
+      - "15672"
+    networks:
+      - transjakarta-network
+    healthcheck:
+      test: [ "CMD", "rabbitmq-diagnostics", "check_port_connectivity" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: mosquittov2
+    restart: unless-stopped
+    ports:
+      - "1883"
+    configs:
+      - source: mosquitto_conf
+        target: /mosquitto/config/mosquitto.conf
+    volumes:
+      - ./mosquito/data:/mosquitto/data
+      - ./mosquito/log:/mosquitto/log
+    networks:
+      - transjakarta-network
+    healthcheck:
+      test: [ "CMD", "mosquitto_pub", "-h", "localhost", "-p", "1883", "-t", "health/check", "-m", "ping", "-r", "-q", "1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  migrate:
+    image: migrate/migrate:latest
+    container_name: migrate-app
+    volumes:
+      - ./database/migration:/migration
+    networks:
+      - transjakarta-network
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: "-path /migration -database postgresql://admin:admin@postgres:5432/transjkt?sslmode=disable --verbose up"
+    restart: "no"
+
+  rest:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    container_name: rest
+    depends_on:
+      - migrate
+      - rabbitmq
+      - mosquitto
+    command: ["rest"]
+    ports:
+      - "8000:8000"
+    environment:
+      MQTT_URL : "tcp://mosquitto:1883"
+      PGSQL_HOST : "postgres"
+      RABBIT_URL : "amqp://admin:admin123@rabbitmq:5672/"
+    networks:
+      - transjakarta-network
+
+  consumer:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    container_name: consumer
+    restart: on-failure
+    depends_on:
+      - migrate
+      - rabbitmq
+      - mosquitto
+      - rest
+    command: ["consumer"]
+    environment:
+      MQTT_URL: "tcp://mosquitto:1883"
+      PGSQL_HOST : "postgres"
+      RABBIT_URL : "amqp://admin:admin123@rabbitmq:5672/"
+
+volumes:
+  postgres_data:
+
+configs:
+  mosquitto_conf:
+    file: ./mosquitto.conf
+
+networks:
+  transjakarta-network:
+    driver: bridge
+    name: transjakarta-network
+

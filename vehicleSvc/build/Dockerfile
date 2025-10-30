@@ -18,8 +18,4 @@ COPY --from=builder /bin/app .
 
 COPY database ./database
 
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
-
 ENTRYPOINT ["./app"]
-CMD ["rest"]

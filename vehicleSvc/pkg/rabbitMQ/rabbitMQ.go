@@ -94,7 +94,7 @@ func (r *RabbitMQ) Init() {
 			break
 		}
 
-		fmt.Println("❌ Failed to connect to RabbitMQ, retrying in 2s...")
+		fmt.Println("Failed to connect to RabbitMQ, retrying in 2s...")
 		time.Sleep(2 * time.Second)
 	}
 
