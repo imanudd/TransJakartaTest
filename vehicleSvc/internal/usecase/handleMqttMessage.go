@@ -11,8 +11,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	MQTT "github.com/eclipse/paho.mqtt.golang"
 	"log"
+
+	MQTT "github.com/eclipse/paho.mqtt.golang"
 )
 
 type MqttUsecaseImpl interface {
@@ -39,6 +40,7 @@ func (u *MqttUsecase) GetVehicleLocation(client MQTT.Client, msg MQTT.Message) {
 	err := json.Unmarshal(msg.Payload(), &payload)
 	if err != nil {
 		fmt.Println("error unmarshal :", err)
+		return
 	}
 
 	if err = validator.ValidateStruct(&payload); err != nil {
@@ -64,8 +66,8 @@ func (u *MqttUsecase) GetVehicleLocation(client MQTT.Client, msg MQTT.Message) {
 	dst := distance.Distance{
 		Latitude1:  payload.Latitude,
 		Longitude1: payload.Longitude,
-		Latitude2:  -6.2089061,
-		Longitude2: 106.847117,
+		Latitude2:  -6.208906,
+		Longitude2: 106.84711,
 	}
 
 	distanceLoc := dst.GetDistanceOnMeter()
